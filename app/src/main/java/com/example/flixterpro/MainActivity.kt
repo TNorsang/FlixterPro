@@ -4,16 +4,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.util.Log
+
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val reviewButton = findViewById<Button>(R.id.Review)
-        reviewButton.setOnClickListener {
-            val intent = Intent(this, testpage.xml)
-            startActivity(intent)
-        }
+        // Access the API key
+        val apiKey = BuildConfig.API_KEY
+
+        // Log the API key for verification
+        Log.d("API_KEY", apiKey)
+        // You can use the API key here or in subsequent methods
     }
+
+    // Other methods and code for your MainActivity
+
 }
